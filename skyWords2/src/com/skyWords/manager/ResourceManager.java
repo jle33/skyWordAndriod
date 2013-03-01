@@ -2,6 +2,8 @@ package com.skyWords.manager;
 import org.andengine.engine.Engine;
 import org.andengine.engine.camera.Camera;
 import org.andengine.opengl.font.Font;
+import org.andengine.opengl.font.FontFactory;
+import org.andengine.opengl.texture.ITexture;
 import org.andengine.opengl.texture.TextureOptions;
 import org.andengine.opengl.texture.atlas.bitmap.BitmapTextureAtlas;
 import org.andengine.opengl.texture.atlas.bitmap.BitmapTextureAtlasTextureRegionFactory;
@@ -12,6 +14,8 @@ import org.andengine.opengl.texture.atlas.buildable.builder.ITextureAtlasBuilder
 import org.andengine.opengl.texture.region.ITextureRegion;
 import org.andengine.opengl.vbo.VertexBufferObjectManager;
 import org.andengine.util.debug.Debug;
+
+import android.graphics.Color;
 
 import com.skyWords.runtime.SkyWordsActivity;
 
@@ -45,6 +49,7 @@ public class ResourceManager {
     {
         loadMenuGraphics();
         loadMenuAudio();
+        loadMenuFonts();
     }
     
     public void loadGameResources()
@@ -72,7 +77,14 @@ public class ResourceManager {
     	        Debug.e(e);
     	}
     }
-    
+    private void loadMenuFonts()
+    {
+        FontFactory.setAssetBasePath("font/");
+        final ITexture mainFontTexture = new BitmapTextureAtlas(activity.getTextureManager(), 256, 256, TextureOptions.BILINEAR_PREMULTIPLYALPHA);
+
+        font = FontFactory.createStrokeFromAsset(activity.getFontManager(), mainFontTexture, activity.getAssets(), "EraserRegular.ttf", 50, true, Color.WHITE, 2, Color.BLACK);
+        font.load();
+    }
     private void loadMenuAudio()
     {
         

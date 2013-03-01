@@ -3,8 +3,9 @@ package com.skyWords.manager;
 import org.andengine.engine.Engine;
 import org.andengine.ui.IGameInterface.OnCreateSceneCallback;
 
-import com.skyWords.runtime.MainMenuScene;
-import com.skyWords.runtime.SplashScene;
+import com.skyWords.runtime.scene.LoadingScene;
+import com.skyWords.runtime.scene.MainMenuScene;
+import com.skyWords.runtime.scene.SplashScene;
 
 public class SceneManager {
 	//---------------------------------------------
@@ -85,6 +86,7 @@ public class SceneManager {
     {
         ResourceManager.getInstance().loadMenuResources();
         menuScene = new MainMenuScene();
+        loadingScene = new LoadingScene();
         setScene(menuScene);
         disposeSplashScene();
     }
