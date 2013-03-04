@@ -82,7 +82,7 @@ public class ResourceManager {
         FontFactory.setAssetBasePath("font/");
         final ITexture mainFontTexture = new BitmapTextureAtlas(activity.getTextureManager(), 256, 256, TextureOptions.BILINEAR_PREMULTIPLYALPHA);
 
-        font = FontFactory.createStrokeFromAsset(activity.getFontManager(), mainFontTexture, activity.getAssets(), "EraserRegular.ttf", 50, true, Color.WHITE, 2, Color.BLACK);
+        font = FontFactory.createStrokeFromAsset(activity.getFontManager(), mainFontTexture, activity.getAssets(), "EraserRegular.ttf", 50, true, Color.WHITE, 2, Color.WHITE);
         font.load();
     }
     private void loadMenuAudio()
@@ -117,6 +117,18 @@ public class ResourceManager {
     {
     	splashTextureAtlas.unload();
     	splash_region = null;
+    }
+    public void unloadMenuTextures()
+    {
+        menuTextureAtlas.unload();
+    }
+    public void unloadGameTextures()
+    {
+        // TODO (Since we did not create any textures for game scene yet)
+    }    
+    public void loadMenuTextures()
+    {
+        menuTextureAtlas.load();
     }
     
     /**

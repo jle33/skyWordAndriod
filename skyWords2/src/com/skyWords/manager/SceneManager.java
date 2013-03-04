@@ -1,8 +1,11 @@
 package com.skyWords.manager;
 
 import org.andengine.engine.Engine;
+import org.andengine.engine.handler.timer.ITimerCallback;
+import org.andengine.engine.handler.timer.TimerHandler;
 import org.andengine.ui.IGameInterface.OnCreateSceneCallback;
 
+import com.skyWords.runtime.scene.GameScene;
 import com.skyWords.runtime.scene.LoadingScene;
 import com.skyWords.runtime.scene.MainMenuScene;
 import com.skyWords.runtime.scene.SplashScene;
@@ -89,6 +92,37 @@ public class SceneManager {
         loadingScene = new LoadingScene();
         setScene(menuScene);
         disposeSplashScene();
+    }
+    
+    public void loadGameScene(final Engine mEngine)
+    {
+        setScene(loadingScene);
+        ResourceManager.getInstance().unloadMenuTextures();
+        mEngine.registerUpdateHandler(new TimerHandler(0.1f, new ITimerCallback() 
+        {
+            public void onTimePassed(final TimerHandler pTimerHandler) 
+            {
+                mEngine.unregisterUpdateHandler(pTimerHandler);
+                ResourceManager.getInstance().loadGameResources();
+                gameScene = new GameScene();
+                setScene(gameScene);
+            }
+        }));
+    }
+    public void loadMenuScene(final Engine mEngine)
+    {
+        setScene(loadingScene);
+        gameScene.disposeScene();
+        ResourceManager.getInstance().unloadGameTextures();
+        mEngine.registerUpdateHandler(new TimerHandler(0.1f, new ITimerCallback() 
+        {
+            public void onTimePassed(final TimerHandler pTimerHandler) 
+            {
+                mEngine.unregisterUpdateHandler(pTimerHandler);
+                ResourceManager.getInstance().loadMenuTextures();
+                setScene(menuScene);
+            }
+        }));
     }
     //---------------------------------------------
     // GETTERS AND SETTERS

@@ -10,6 +10,7 @@ import org.andengine.opengl.util.GLState;
 import org.andengine.engine.camera.Camera;
 
 import com.skyWords.manager.BaseScene;
+import com.skyWords.manager.SceneManager;
 import com.skyWords.manager.SceneManager.SceneType;
 
 public class MainMenuScene extends BaseScene implements IOnMenuItemClickListener{
@@ -81,6 +82,7 @@ public class MainMenuScene extends BaseScene implements IOnMenuItemClickListener
 		 switch(pMenuItem.getID())
 	        {
 	        case MENU_PLAY:
+	        	SceneManager.getInstance().loadGameScene(engine);
 	            return true;
 	        case MENU_OPTIONS:
 	            return true;

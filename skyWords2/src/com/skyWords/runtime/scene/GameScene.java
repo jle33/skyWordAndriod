@@ -33,7 +33,7 @@ public class GameScene extends BaseScene{
 
 		scoreText = new Text(20, 420, resourcesManager.font, "Score: 0123456789", new TextOptions(HorizontalAlign.LEFT), vbom);
 
-		scoreText.setSkewCenter(0, 0);    
+		scoreText.setSkewCenter(0, -100);    
 		scoreText.setText("Score: 0");
 		gameHUD.attachChild(scoreText);
 
@@ -69,7 +69,11 @@ public class GameScene extends BaseScene{
 
 	@Override
 	public void disposeScene() {
-		// TODO Auto-generated method stub
+	    camera.setHUD(null);
+	    camera.setCenter(400, 240);
+
+	    // TODO code responsible for disposing scene
+	    // removing all game scene objects.
 
 	}
 
