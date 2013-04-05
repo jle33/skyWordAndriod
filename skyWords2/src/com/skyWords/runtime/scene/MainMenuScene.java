@@ -20,7 +20,6 @@ public class MainMenuScene extends BaseScene implements IOnMenuItemClickListener
 	
 	@Override
 	public void createScene() {
-		// TODO Auto-generated method stub
 		 createBackground();
 		 createMenuChildScene();
 	}
@@ -33,13 +32,11 @@ public class MainMenuScene extends BaseScene implements IOnMenuItemClickListener
 
 	@Override
 	public SceneType getSceneType() {
-		// TODO Auto-generated method stub
 		return SceneType.SCENE_MENU;
 	}
 
 	@Override
 	public void disposeScene() {
-		// TODO Auto-generated method stub
 		
 	}
 	private void createBackground()
