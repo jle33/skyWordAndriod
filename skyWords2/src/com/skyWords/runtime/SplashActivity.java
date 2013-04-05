@@ -9,6 +9,8 @@ import android.media.MediaPlayer.OnCompletionListener;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MotionEvent;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.VideoView;
 
 public class SplashActivity extends Activity {
@@ -31,7 +33,7 @@ public class SplashActivity extends Activity {
 			Uri video = Uri.parse("android.resource://" + getPackageName()
 					+ "/" + R.raw.splash);
 			videoHolder.setVideoURI(video);
-
+			//videoHolder.
 			videoHolder.setOnCompletionListener(new OnCompletionListener() {
 
 				public void onCompletion(MediaPlayer mp) {
