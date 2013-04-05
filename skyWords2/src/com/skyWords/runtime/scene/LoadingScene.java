@@ -2,7 +2,8 @@ package com.skyWords.runtime.scene;
 
 import org.andengine.entity.scene.background.Background;
 import org.andengine.entity.text.Text;
-import org.andengine.util.color.Color;
+import org.andengine.util.adt.color.Color;
+
 
 import com.skyWords.manager.BaseScene;
 import com.skyWords.manager.SceneManager.SceneType;

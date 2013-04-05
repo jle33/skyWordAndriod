@@ -26,7 +26,7 @@ public class SkyWordsActivity  extends BaseGameActivity{
 	private Camera mCamera;
 	// Declare a Scene object for our activity
 	private Scene mScene;
-	public float CAMERA_WIDTH = 800;
+	public float CAMERA_WIDTH = 720;
 	public float CAMERA_HEIGHT = 1280;
 	private ResourceManager resourcesManager;
 

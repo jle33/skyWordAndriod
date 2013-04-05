@@ -6,8 +6,9 @@ import org.andengine.entity.text.Text;
 import org.andengine.entity.text.TextOptions;
 import org.andengine.extension.physics.box2d.FixedStepPhysicsWorld;
 import org.andengine.extension.physics.box2d.PhysicsWorld;
-import org.andengine.util.HorizontalAlign;
-import org.andengine.util.color.Color;
+import org.andengine.util.adt.align.HorizontalAlign;
+import org.andengine.util.adt.color.Color;
+
 
 import com.badlogic.gdx.math.Vector2;
 import com.skyWords.runtime.SkyWordsActivity;
