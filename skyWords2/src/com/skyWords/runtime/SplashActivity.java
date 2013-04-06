@@ -1,5 +1,6 @@
 package com.skyWords.runtime;
 
+import com.skyWords.runtime.SkyWordsActivity;
 import com.skywords2.R;
 
 import android.app.Activity;
